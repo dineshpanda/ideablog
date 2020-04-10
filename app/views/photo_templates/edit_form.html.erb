@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for comment_id start -->
-    <input type="text" id="comment_id" name="comment_id" class="form-control" value="<%= @photo.comment_id %>">
+    <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :article_id, @photo.comment_id), :class => "form-control") %>
     <!-- Input for comment_id end -->
   </div>
   <!-- Label and input for comment_id end -->
