@@ -50,3 +50,6 @@ gem 'seed_dump', :git => 'https://github.com/firstdraft/seed_dump.git'
 gem 'activerecord-import'
 gem 'sprockets', '~> 4'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem "ransack"
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
