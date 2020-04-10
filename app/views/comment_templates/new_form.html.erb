@@ -1,0 +1,33 @@
+<h1>
+  Add a new comment
+</h1>
+
+
+<hr>
+
+<!-- Form comment start -->
+<form action="/create_comment" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for article_id start -->
+  <div class="form-group">
+    <label for="article_id">
+      Article
+    </label>
+
+    <!-- Input for article_id start -->
+    <input type="text" id="article_id" name="article_id" class="form-control">
+    <!-- Input for article_id end -->
+  </div>
+  <!-- Label and input for article_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>

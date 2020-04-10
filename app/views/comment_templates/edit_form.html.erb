@@ -1,0 +1,32 @@
+<h1>
+  Edit comment #<%= @comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form comment start -->
+<form action="/update_comment/<%= @comment.id %>" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for article_id start -->
+  <div class="form-group">
+    <label for="article_id">
+      Article
+    </label>
+
+    <!-- Input for article_id start -->
+    <input type="text" id="article_id" name="article_id" class="form-control" value="<%= @comment.article_id %>">
+    <!-- Input for article_id end -->
+  </div>
+  <!-- Label and input for article_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>
