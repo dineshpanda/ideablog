@@ -31,6 +31,20 @@ class PhotosController < ApplicationController
     end
   end
 
+  def create_row_from_comment
+    @photo = Photo.new
+
+    @photo.comment_id = params.fetch("comment_id")
+
+    if @photo.valid?
+      @photo.save
+
+      redirect_to("/comments/#{@photo.comment_id}", notice: "Photo created successfully.")
+    else
+      render("photo_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @photo = Photo.find(params.fetch("prefill_with_id"))
 

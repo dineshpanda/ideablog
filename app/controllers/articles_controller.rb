@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @article = Article.find(params.fetch("id_to_display"))
 
     render("article_templates/show.html.erb")
