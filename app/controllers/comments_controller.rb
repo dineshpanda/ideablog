@@ -51,6 +51,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_article
+    @comment = Comment.find(params.fetch("id_to_remove"))
+
+    @comment.destroy
+
+    redirect_to("/articles/#{@comment.article_id}", notice: "Comment deleted successfully.")
+  end
+
   def destroy_row
     @comment = Comment.find(params.fetch("id_to_remove"))
 
