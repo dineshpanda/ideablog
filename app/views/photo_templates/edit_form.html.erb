@@ -1,0 +1,32 @@
+<h1>
+  Edit photo #<%= @photo.id %>
+</h1>
+
+<hr>
+
+<!-- Form photo start -->
+<form action="/update_photo/<%= @photo.id %>" method="post">
+<!-- Form photo end -->
+
+  <!-- Label and input for comment_id start -->
+  <div class="form-group">
+    <label for="comment_id">
+      Comment
+    </label>
+
+    <!-- Input for comment_id start -->
+    <input type="text" id="comment_id" name="comment_id" class="form-control" value="<%= @photo.comment_id %>">
+    <!-- Input for comment_id end -->
+  </div>
+  <!-- Label and input for comment_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update photo
+  </button>
+</form>
+
+<hr>
+
+<a href="/photos">
+  Go back
+</a>
