@@ -54,7 +54,11 @@
 
         <!-- Display photo.comment_id start -->
         <td>
-          <%= photo.comment.article_id %>
+          <% if photo.comment.present? %>
+            <a href="/comments/<%= photo.comment.id %>">
+              <%= photo.comment.article_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo.comment_id end -->
 

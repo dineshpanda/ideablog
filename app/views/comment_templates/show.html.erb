@@ -34,7 +34,11 @@
       </dt>
       <!-- Display article_id start -->
       <dd>
-        <%= @comment.article_id %>
+        <% if @comment.article.present? %>
+          <a href="/articles/<%= @comment.article_id %>">
+            <%= @comment.article.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display article_id end -->
 

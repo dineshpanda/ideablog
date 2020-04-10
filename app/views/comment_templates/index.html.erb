@@ -54,7 +54,11 @@
 
         <!-- Display comment.article_id start -->
         <td>
-          <%= comment.article.title %>
+          <% if comment.article.present? %>
+            <a href="/articles/<%= comment.article.id %>">
+              <%= comment.article.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.article_id end -->
 
