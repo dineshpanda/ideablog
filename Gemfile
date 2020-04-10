@@ -40,3 +40,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails'
 gem 'shoulda-matchers'
+gem 'draft_generators', git: 'https://github.com/firstdraft/draft_generators.git'
