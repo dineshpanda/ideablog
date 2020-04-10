@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link comment start -->
       <div class="col">
         <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit comment
         </a>
       </div>
-      <!-- Edit link comment end -->
 
-      <!-- Delete link comment start -->
       <div class="col">
         <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-outline-secondary">
           Delete comment
         </a>
       </div>
-      <!-- Delete link comment end -->
     </div>
 
     <dl>
       <dt>
         Article
       </dt>
-      <!-- Display article_id start -->
       <dd>
         <% if @comment.article.present? %>
           <a href="/articles/<%= @comment.article_id %>">
@@ -40,33 +35,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display article_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "comment_templates/comment_photos" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

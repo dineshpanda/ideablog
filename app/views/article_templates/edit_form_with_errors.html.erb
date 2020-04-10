@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @article.errors.any? %>
   <% @article.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,56 +12,39 @@
 
 <hr>
 
-<!-- Form article start -->
 <form action="/update_article/<%= @article.id %>" method="post">
-<!-- Form article end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @article.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for content start -->
   <div class="form-group">
     <label for="content">
       Content
     </label>
 
-    <!-- Input for content start -->
     <textarea id="content" name="content" class="form-control" rows="3"><%= @article.content %></textarea>
-    <!-- Input for content end -->
   </div>
-  <!-- Label and input for content end -->
 
-  <!-- Label and input for published start -->
   <div class="form-check">
     <input type="hidden" value="0" name="published">
-    <!-- Input for published start -->
     <input id="published" class="form-check-input" name="published" type="checkbox" value="1" <%= "checked" if @article.published %>>
-    <!-- Input for published end -->
     <label for="published" class="form-check-label">
       Published
     </label>
   </div>
 
-  <!-- Label and input for publish_date start -->
   <div class="form-group">
     <label for="publish_date">
       Publish date
     </label>
 
-    <!-- Input for publish_date start -->
     <input type="text" id="publish_date" name="publish_date" class="form-control" value="<%= @article.publish_date %>">
-    <!-- Input for publish_date end -->
   </div>
-  <!-- Label and input for publish_date end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update article
