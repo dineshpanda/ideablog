@@ -10,6 +10,8 @@ RSpec.describe Photo, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:article) }
+
     end
 
     describe "Validations" do
