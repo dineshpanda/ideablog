@@ -66,7 +66,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activeadmin (2.7.0)
+    activeadmin (2.5.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
       formtastic_i18n (~> 0.4)
@@ -194,7 +194,6 @@ GEM
     pg (1.2.3)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
-    powerpack (0.1.2)
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
@@ -239,6 +238,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
     rollbar (2.24.0)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
@@ -257,14 +257,18 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
-    rubocop (0.58.1)
+    rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
-      powerpack (~> 0.1)
+      parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
+      rexml
       ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     sass-rails (6.0.0)
@@ -317,7 +321,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin (= 2.7.0)
+  activeadmin (= 2.5.0)
   activerecord-import
   bootsnap (>= 1.4.2)
   bootstrap3-datetimepicker-rails (~> 4.17.43)
@@ -334,7 +338,7 @@ DEPENDENCIES
   ransack
   rollbar
   rspec-rails
-  rubocop (= 0.58.1)
+  rubocop-rails (= 2.5.2)
   sass-rails (>= 6)
   seed_dump!
   shoulda-matchers
