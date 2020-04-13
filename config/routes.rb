@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/photos/new", { :controller => "photos", :action => "new_form" })
   post("/create_photo", { :controller => "photos", :action => "create_row" })
-  post("/create_photo_from_comment", { :controller => "photos", :action => "create_row_from_comment" })
+  post("/create_photo_from_article", { :controller => "photos", :action => "create_row_from_article" })
 
   # READ
   get("/photos", { :controller => "photos", :action => "index" })
@@ -18,28 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_photo/:id_to_remove", { :controller => "photos", :action => "destroy_row" })
-  get("/delete_photo_from_comment/:id_to_remove", { :controller => "photos", :action => "destroy_row_from_comment" })
-
-  #------------------------------
-
-  # Routes for the Comment resource:
-
-  # CREATE
-  get("/comments/new", { :controller => "comments", :action => "new_form" })
-  post("/create_comment", { :controller => "comments", :action => "create_row" })
-  post("/create_comment_from_article", { :controller => "comments", :action => "create_row_from_article" })
-
-  # READ
-  get("/comments", { :controller => "comments", :action => "index" })
-  get("/comments/:id_to_display", { :controller => "comments", :action => "show" })
-
-  # UPDATE
-  get("/comments/:prefill_with_id/edit", { :controller => "comments", :action => "edit_form" })
-  post("/update_comment/:id_to_modify", { :controller => "comments", :action => "update_row" })
-
-  # DELETE
-  get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
-  get("/delete_comment_from_article/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_article" })
+  get("/delete_photo_from_article/:id_to_remove", { :controller => "photos", :action => "destroy_row_from_article" })
 
   #------------------------------
 
@@ -62,5 +41,5 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

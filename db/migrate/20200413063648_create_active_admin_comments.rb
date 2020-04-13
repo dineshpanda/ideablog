@@ -1,4 +1,4 @@
-class CreateActiveAdminComments < ActiveRecord::Migration[6.0]
+class CreateActiveAdminComments < ActiveRecord::Migration::Current
   def self.up
     create_table :active_admin_comments do |t|
       t.string :namespace
@@ -8,6 +8,7 @@ class CreateActiveAdminComments < ActiveRecord::Migration[6.0]
       t.timestamps
     end
     add_index :active_admin_comments, [:namespace]
+
   end
 
   def self.down

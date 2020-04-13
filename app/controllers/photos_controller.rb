@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   def index
     @q = Photo.ransack(params[:q])
-    @photos = @q.result(:distinct => true).includes(:comment, :article).page(params[:page]).per(10)
+    @photos = @q.result(:distinct => true).includes(:article).page(params[:page]).per(10)
 
     render("photo_templates/index.html.erb")
   end
@@ -21,7 +21,8 @@ class PhotosController < ApplicationController
   def create_row
     @photo = Photo.new
 
-    @photo.comment_id = params.fetch("comment_id")
+    @photo.article_id = params.fetch("article_id")
+    @photo.image = params.fetch("image") if params.key?("image")
 
     if @photo.valid?
       @photo.save
@@ -32,15 +33,16 @@ class PhotosController < ApplicationController
     end
   end
 
-  def create_row_from_comment
+  def create_row_from_article
     @photo = Photo.new
 
-    @photo.comment_id = params.fetch("comment_id")
+    @photo.article_id = params.fetch("article_id")
+    @photo.image = params.fetch("image") if params.key?("image")
 
     if @photo.valid?
       @photo.save
 
-      redirect_to("/comments/#{@photo.comment_id}", notice: "Photo created successfully.")
+      redirect_to("/articles/#{@photo.article_id}", notice: "Photo created successfully.")
     else
       render("photo_templates/new_form_with_errors.html.erb")
     end
@@ -55,7 +57,8 @@ class PhotosController < ApplicationController
   def update_row
     @photo = Photo.find(params.fetch("id_to_modify"))
 
-    @photo.comment_id = params.fetch("comment_id")
+    @photo.article_id = params.fetch("article_id")
+    @photo.image = params.fetch("image") if params.key?("image")
 
     if @photo.valid?
       @photo.save
@@ -66,12 +69,12 @@ class PhotosController < ApplicationController
     end
   end
 
-  def destroy_row_from_comment
+  def destroy_row_from_article
     @photo = Photo.find(params.fetch("id_to_remove"))
 
     @photo.destroy
 
-    redirect_to("/comments/#{@photo.comment_id}", notice: "Photo deleted successfully.")
+    redirect_to("/articles/#{@photo.article_id}", notice: "Photo deleted successfully.")
   end
 
   def destroy_row

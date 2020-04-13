@@ -26,14 +26,21 @@
 
     <dl>
       <dt>
-        Comment
+        Article
       </dt>
       <dd>
-        <% if @photo.comment.present? %>
-          <a href="/comments/<%= @photo.comment_id %>">
-            <%= @photo.comment.article_id %>
+        <% if @photo.article.present? %>
+          <a href="/articles/<%= @photo.article_id %>">
+            <%= @photo.article.created_at %>
           </a>
         <% end %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <img src="<%= @photo.image %>" class="img-fluid">
       </dd>
 
       <dt>
@@ -53,8 +60,3 @@
   </div>
 </div>
 
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "photo_templates/photo_article" %>
-  </div>
-</div>

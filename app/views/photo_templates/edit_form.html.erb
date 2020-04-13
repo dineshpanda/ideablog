@@ -4,14 +4,23 @@
 
 <hr>
 
-<form action="/update_photo/<%= @photo.id %>" method="post">
+<form action="/update_photo/<%= @photo.id %>" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
-    <label for="comment_id">
-      Comment
+    <label for="article_id">
+      Article
     </label>
 
-    <%= select_tag(:comment_id, options_from_collection_for_select(Comment.all, :id, :article_id, @photo.comment_id), :class => "form-control") %>
+    <%= select_tag(:article_id, options_from_collection_for_select(Article.all, :id, :created_at, @photo.article_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <%= cl_image_tag(@photo.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="image" name="image" class="form-control">
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

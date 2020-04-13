@@ -1,13 +1,11 @@
 class Photo < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   # Direct associations
 
-  belongs_to :comment
+  belongs_to :article
 
   # Indirect associations
-
-  has_one    :article,
-             :through => :comment,
-             :source => :article
 
   # Validations
 

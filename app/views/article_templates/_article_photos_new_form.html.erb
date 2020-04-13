@@ -1,19 +1,6 @@
-<h1>
-  Add a new photo
-</h1>
-
-
-<hr>
-
 <form action="/create_photo" method="post" enctype="multipart/form-data">
 
-  <div class="form-group">
-    <label for="article_id">
-      Article
-    </label>
-
-    <%= select_tag(:article_id, options_from_collection_for_select(Article.all, :id, :created_at, @photo.article_id), :class => "form-control") %>
-  </div>
+  <input type="hidden" name="article_id" value="<%= @article.id %>">
 
   <div class="form-group">
     <label for="image">
@@ -27,9 +14,3 @@
     Create photo
   </button>
 </form>
-
-<hr>
-
-<a href="/photos">
-  Go back
-</a>

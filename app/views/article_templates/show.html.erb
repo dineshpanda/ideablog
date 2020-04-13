@@ -26,34 +26,6 @@
 
     <dl>
       <dt>
-        Title
-      </dt>
-      <dd>
-        <%= @article.title %>
-      </dd>
-
-      <dt>
-        Content
-      </dt>
-      <dd>
-        <%= @article.content %>
-      </dd>
-
-      <dt>
-        Published
-      </dt>
-      <dd>
-        <%= @article.published %>
-      </dd>
-
-      <dt>
-        Publish date
-      </dt>
-      <dd>
-        <%= @article.publish_date %>
-      </dd>
-
-      <dt>
         Created at
       </dt>
       <dd>
@@ -67,12 +39,6 @@
         <%= time_ago_in_words(@article.updated_at) %> ago
       </dd>
     </dl>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "article_templates/article_comments" %>
   </div>
 </div>
 
