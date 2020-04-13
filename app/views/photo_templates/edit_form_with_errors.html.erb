@@ -19,7 +19,7 @@
       Article
     </label>
 
-    <%= select_tag(:article_id, options_from_collection_for_select(Article.all, :id, :created_at, @photo.article_id), :class => "form-control") %>
+    <%= select_tag(:article_id, options_from_collection_for_select(Article.all, :id, :title, @photo.article_id), :class => "form-control") %>
   </div>
 
   <div class="form-group">

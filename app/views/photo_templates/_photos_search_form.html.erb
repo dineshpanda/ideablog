@@ -43,44 +43,9 @@
 
 
   <div class="form-group">
-    <%= f.label :created_at, "Article Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='articlegteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :article_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Article Created at greater than or equal to", :data => {:target => '#articlegteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#articlegteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='articlelteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :article_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Article Created at less than or equal to", :data => {:target => '#articlelteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#articlelteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= f.label :article_title_cont, "Article title contains" %>
+    <%= f.text_field :article_title_cont, :class => "form-control", :placeholder => "Article title contains" %>
   </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#articlegteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#articlelteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#articlegteqcreated_atPicker').on("dp.change", function (e) {
-              $('#articlelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#articlelteqcreated_atPicker').on("dp.change", function (e) {
-              $('#articlegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
