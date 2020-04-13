@@ -29,7 +29,11 @@
         </th>
 
         <th>
-          Comment
+          Article
+        </th>
+
+        <th>
+          Image
         </th>
 
         <th>
@@ -51,11 +55,15 @@
         </td>
 
         <td>
-          <% if photo.comment.present? %>
-            <a href="/comments/<%= photo.comment.id %>">
-              <%= photo.comment.article_id %>
+          <% if photo.article.present? %>
+            <a href="/articles/<%= photo.article.id %>">
+              <%= photo.article.created_at %>
             </a>
           <% end %>
+        </td>
+
+        <td>
+          <img src='<%= photo.image %>' class='img-fluid'>
         </td>
 
         <td>

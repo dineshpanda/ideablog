@@ -1,17 +1,31 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
     Photos
+
+    <a data-toggle="collapse" href="#article_photos_new_form">
+      Add photo
+    </a>
   </div>
 
   <ul class="list-group list-group-flush">
     <% @article.photos.each do |photo| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a href="/photos/<%= photo.id %>">
-          <%= photo.comment_id %>
+          <%= photo.article_id %>
+        </a>
+
+        <a href="/delete_photo_from_article/<%= photo.id %>">
+          Delete
         </a>
 
       </li>
     <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="article_photos_new_form">
+        <%= render partial: "article_templates/article_photos_new_form" %>
+      </div>
+    </div>
 
   </ul>
 </div>
